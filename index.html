@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PACU數位藥物學習中心</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7WH960S5GM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7WH960S5GM');
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+:root{
+  --bg:#070d18;
+  --bg-card:#0d1a2e;
+  --bg-card-hover:#132644;
+  --border:#1e3a5f;
+  --accent:#38bdf8;
+  --accent-soft:rgba(56,189,248,.12);
+  --text:#e2e8f0;
+  --text-muted:#94a3b8;
+  --grad-start:#0f1d32;
+  --grad-end:#1a3a5c;
+  --radius:16px;
+  --shadow:0 4px 24px rgba(0,0,0,.35);
+}
+
+body{
+  font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+}
+
+/* ===== Hero ===== */
+.hero{
+  background:linear-gradient(135deg,#0c1929 0%,#183352 50%,#2a5080 100%);
+  padding:72px 28px 56px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(ellipse at 30% 20%,rgba(56,189,248,.08) 0%,transparent 60%);
+  pointer-events:none;
+}
+.hero-inner{
+  max-width:800px;
+  margin:0 auto;
+  position:relative;
+}
+.hero h1{
+  font-size:clamp(32px,6vw,52px);
+  font-weight:900;
+  letter-spacing:.02em;
+  line-height:1.2;
+  margin-bottom:12px;
+}
+.hero h1 .icon{font-size:.85em;}
+.hero .subtitle{
+  font-size:clamp(14px,2.5vw,17px);
+  color:var(--text-muted);
+  letter-spacing:.06em;
+  font-weight:400;
+}
+
+/* ===== Main ===== */
+.main{
+  max-width:960px;
+  margin:0 auto;
+  padding:48px 20px 32px;
+}
+
+/* Section labels */
+.section-label{
+  display:inline-block;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2.5px;
+  color:var(--accent);
+  margin-bottom:14px;
+  text-transform:uppercase;
+}
+
+/* ===== Video Card ===== */
+.video-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:28px;
+  margin-bottom:40px;
+  box-shadow:var(--shadow);
+}
+.video-card h2{
+  font-size:clamp(22px,4vw,28px);
+  font-weight:700;
+  margin-bottom:6px;
+}
+.video-card .desc{
+  color:var(--text-muted);
+  font-size:14px;
+  margin-bottom:20px;
+}
+.video-wrapper{
+  position:relative;
+  border-radius:12px;
+  overflow:hidden;
+  background:#000;
+  box-shadow:0 2px 16px rgba(0,0,0,.4);
+}
+.video-wrapper video{
+  display:block;
+  width:100%;
+  max-height:480px;
+  object-fit:contain;
+  background:#000;
+}
+
+/* ===== Module Grid ===== */
+.module-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.mod-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:32px 28px;
+  cursor:pointer;
+  transition:transform .2s,border-color .2s,box-shadow .2s;
+  text-decoration:none;
+  color:inherit;
+  display:flex;
+  flex-direction:column;
+}
+.mod-card:hover{
+  transform:translateY(-4px);
+  border-color:var(--accent);
+  box-shadow:0 8px 32px rgba(56,189,248,.1);
+}
+.mod-card .card-icon{
+  font-size:44px;
+  margin-bottom:16px;
+  display:block;
+}
+.mod-card h3{
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:10px;
+  color:#fff;
+}
+.mod-card p{
+  font-size:15px;
+  color:var(--text-muted);
+  line-height:1.6;
+  flex:1;
+}
+.mod-card .card-tag{
+  display:inline-block;
+  margin-top:16px;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:1px;
+  color:var(--accent);
+  background:var(--accent-soft);
+  padding:4px 10px;
+  border-radius:20px;
+  align-self:flex-start;
+}
+
+/* ===== Footer ===== */
+.footer{
+  text-align:center;
+  padding:32px 20px;
+  color:var(--text-muted);
+  font-size:13px;
+  border-top:1px solid var(--border);
+  max-width:960px;
+  margin:0 auto;
+}
+
+@media(max-width:600px){
+  .hero{padding:48px 20px 40px;}
+  .main{padding:32px 16px 24px;}
+  .module-grid{grid-template-columns:1fr;}
+  .video-card{padding:20px 16px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <h1><span class="icon">🏥</span> PACU數位藥物學習中心</h1>
+    <p class="subtitle">Post-Anesthesia Care Unit Digital Drug Learning Center</p>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="section-label">MOD-01 ・ 教學影片</div>
+  <div class="video-card">
+    <h2>🎥 PACU藥物教學影片</h2>
+    <p class="desc">恢復室常備藥物、管制藥物與急救車藥物完整教學</p>
+    <div class="video-wrapper">
+      <video controls preload="metadata">
+        <source src="PACU_drug_learning_full.mp4" type="video/mp4">
+        您的瀏覽器不支援影片播放
+      </video>
+    </div>
+  </div>
+
+  <div class="section-label">MOD-02 ～ MOD-05</div>
+  <div class="module-grid">
+
+    <a class="mod-card" href="calculator.html" onclick="gtag('event','dose_calculation');">
+      <span class="card-icon">🧮</span>
+      <h3>PACU藥物換算</h3>
+      <p>PACU常用藥物劑量換算工具</p>
+      <span class="card-tag">MOD-05</span>
+    </a>
+
+    <a class="mod-card" href="deathrace.html" onclick="gtag('event','game_start');">
+      <span class="card-icon">💊</span>
+      <h3>PACU藥命關頭</h3>
+      <p>情境式藥物學習遊戲</p>
+      <span class="card-tag">MOD-02</span>
+    </a>
+
+    <a class="mod-card" href="toolbox.html" onclick="gtag('event','drug_search');">
+      <span class="card-icon">🧰</span>
+      <h3>PACU藥物工具箱</h3>
+      <p>網頁版藥物查詢系統</p>
+      <span class="card-tag">MOD-03</span>
+    </a>
+
+    <a class="mod-card" href="app.html">
+      <span class="card-icon">📱</span>
+      <h3>PACU藥物APP</h3>
+      <p>手機版藥物查詢系統</p>
+      <span class="card-tag">MOD-04</span>
+    </a>
+
+  </div>
+</div>
+
+<div class="footer">
+  PACU Digital Drug Learning Center © 2026
+</div>
+
+</body>
+</html>
